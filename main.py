@@ -70,15 +70,28 @@ list_desserts = ['Cake', 'Donut', 'Fruit', 'Cookies', 'Croissant', 'Muffin', 'Wa
 
 # Items food
 variables_food = []
+inputs_food = []
+text_food = []
 count = 0
 
 for food in list_food:
+
+    # Create checkbuttons
     variables_food.append('')
     variables_food[count] = IntVar()
     food = Checkbutton(panel_food, text=food.title(), font=('Arial', 20, 'bold'),
                        onvalue=1, offvalue=0, variable=variables_food[count])
 
     food.grid(row=count, column=0, sticky=W)
+
+    # Create inputs
+    inputs_food.append('')
+    text_food.append('')
+    inputs_food[count] = Entry(panel_food, font=('Arial', 19, 'bold'),
+                       bd=1, width=6, state=DISABLED, textvariable=text_food[count])
+
+    inputs_food[count].grid(row=count, column=1)
+
     count += 1
 
 # Items drinks
