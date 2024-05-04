@@ -41,5 +41,11 @@ panel_drinks = LabelFrame(panel_left, text='Drinks', fg='chocolate4',
 
 panel_drinks.pack(side=LEFT)
 
+# Desserts panel
+panel_desserts = LabelFrame(panel_left, text='Desserts', fg='chocolate4',
+                  font=('Arial', 20, 'bold'), relief=FLAT, bd=1)
+
+panel_desserts.pack(side=LEFT)
+
 # Prevents screen from closing
 app.mainloop()
