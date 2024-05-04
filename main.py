@@ -152,5 +152,16 @@ for dessert in list_desserts:
 
     count += 1
 
+# Variables
+var_cost_food = StringVar()
+
+# Costs tags and input fields
+tag_cost_food = Label(panel_costs, text='Cost food', font=('Arial', 12, 'bold'), bg="chocolate2", fg="white")
+tag_cost_food.grid(row=0, column=0)
+
+text_cost_food = Entry(panel_costs, font=('Arial', 12, 'bold'), bd=1, width=10,
+                       state='readonly', textvariable=var_cost_food)
+text_cost_food.grid(row=0, column=1)
+
 # Prevents screen from closing
 app.mainloop()
