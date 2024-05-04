@@ -63,5 +63,19 @@ panel_receipt.pack()
 panel_buttons = Frame(panel_right, bd=1, relief=FLAT, bg='seashell3')
 panel_buttons.pack()
 
+# Lists
+list_food = ['Pizza', 'Chicken', 'Beef', 'Fish', 'Fries', 'Burger', 'Salad', 'Sandwich']
+list_drinks = ['Water', 'Lemonade', 'Beer', 'Wine', 'Coffee', 'Tea', 'Juice', 'Soda']
+list_desserts = ['Cake', 'Donut', 'Fruit', 'Cookies', 'Croissant', 'Muffin', 'Waffle', 'Mousse']
+
+count = 0
+
+for food in list_food:
+    food = Checkbutton(panel_food, text=food.title(), font=('Arial', 20, 'bold'),
+                       onvalue=1, offvalue=0)
+
+    food.grid(row=count, column=0, sticky=W)
+    count += 1
+
 # Prevents screen from closing
 app.mainloop()
