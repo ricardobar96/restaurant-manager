@@ -68,11 +68,15 @@ list_food = ['Pizza', 'Chicken', 'Beef', 'Fish', 'Fries', 'Burger', 'Salad', 'Sa
 list_drinks = ['Water', 'Lemonade', 'Beer', 'Wine', 'Coffee', 'Tea', 'Juice', 'Soda']
 list_desserts = ['Cake', 'Donut', 'Fruit', 'Cookies', 'Croissant', 'Muffin', 'Waffle', 'Mousse']
 
+# Items food
+variables_food = []
 count = 0
 
 for food in list_food:
+    variables_food.append('')
+    variables_food[count] = IntVar()
     food = Checkbutton(panel_food, text=food.title(), font=('Arial', 20, 'bold'),
-                       onvalue=1, offvalue=0)
+                       onvalue=1, offvalue=0, variable=variables_food[count])
 
     food.grid(row=count, column=0, sticky=W)
     count += 1
