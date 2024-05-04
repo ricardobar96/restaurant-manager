@@ -87,6 +87,8 @@ for food in list_food:
     # Create inputs
     inputs_food.append('')
     text_food.append('')
+    text_food[count] = StringVar()
+    text_food[count].set('0')
     inputs_food[count] = Entry(panel_food, font=('Arial', 19, 'bold'),
                        bd=1, width=6, state=DISABLED, textvariable=text_food[count])
 
@@ -113,6 +115,8 @@ for drink in list_drinks:
     # Create inputs
     inputs_drinks.append('')
     text_drinks.append('')
+    text_drinks[count] = StringVar()
+    text_drinks[count].set('0')
     inputs_drinks[count] = Entry(panel_drinks, font=('Arial', 19, 'bold'),
                                bd=1, width=6, state=DISABLED, textvariable=text_drinks[count])
 
@@ -139,6 +143,8 @@ for dessert in list_desserts:
     # Create inputs
     inputs_desserts.append('')
     text_desserts.append('')
+    text_desserts[count] = StringVar()
+    text_desserts[count].set('0')
     inputs_desserts[count] = Entry(panel_desserts, font=('Arial', 19, 'bold'),
                                bd=1, width=6, state=DISABLED, textvariable=text_desserts[count])
 
