@@ -96,28 +96,54 @@ for food in list_food:
 
 # Items drinks
 variables_drinks = []
+inputs_drinks = []
+text_drinks = []
 count = 0
 
 for drink in list_drinks:
+
+    # Create checkbuttons
     variables_drinks.append('')
     variables_drinks[count] = IntVar()
     drink = Checkbutton(panel_drinks, text=drink.title(), font=('Arial', 20, 'bold'),
                        onvalue=1, offvalue=0, variable=variables_drinks[count])
 
     drink.grid(row=count, column=0, sticky=W)
+
+    # Create inputs
+    inputs_drinks.append('')
+    text_drinks.append('')
+    inputs_drinks[count] = Entry(panel_drinks, font=('Arial', 19, 'bold'),
+                               bd=1, width=6, state=DISABLED, textvariable=text_drinks[count])
+
+    inputs_drinks[count].grid(row=count, column=1)
+
     count += 1
 
 # Items desserts
 variables_desserts = []
+inputs_desserts = []
+text_desserts = []
 count = 0
 
 for dessert in list_desserts:
+
+    # Create checkbuttons
     variables_desserts.append('')
     variables_desserts[count] = IntVar()
     dessert = Checkbutton(panel_desserts, text=dessert.title(), font=('Arial', 20, 'bold'),
                        onvalue=1, offvalue=0, variable=variables_desserts[count])
 
     dessert.grid(row=count, column=0, sticky=W)
+
+    # Create inputs
+    inputs_desserts.append('')
+    text_desserts.append('')
+    inputs_desserts[count] = Entry(panel_desserts, font=('Arial', 19, 'bold'),
+                               bd=1, width=6, state=DISABLED, textvariable=text_desserts[count])
+
+    inputs_desserts[count].grid(row=count, column=1)
+
     count += 1
 
 # Prevents screen from closing
