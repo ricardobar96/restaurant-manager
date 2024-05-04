@@ -196,5 +196,12 @@ text_tax = Entry(panel_costs, font=('Arial', 12, 'bold'), bd=1, width=10,
                        state='readonly', textvariable=var_tax)
 text_tax.grid(row=1, column=3)
 
+tag_total = Label(panel_costs, text='Total', font=('Arial', 12, 'bold'), bg="chocolate2", fg="white")
+tag_total.grid(row=2, column=2)
+
+text_total = Entry(panel_costs, font=('Arial', 12, 'bold'), bd=1, width=10,
+                       state='readonly', textvariable=var_total)
+text_total.grid(row=2, column=3)
+
 # Prevents screen from closing
 app.mainloop()
