@@ -81,5 +81,31 @@ for food in list_food:
     food.grid(row=count, column=0, sticky=W)
     count += 1
 
+# Items drinks
+variables_drinks = []
+count = 0
+
+for drink in list_drinks:
+    variables_drinks.append('')
+    variables_drinks[count] = IntVar()
+    drink = Checkbutton(panel_drinks, text=drink.title(), font=('Arial', 20, 'bold'),
+                       onvalue=1, offvalue=0, variable=variables_drinks[count])
+
+    drink.grid(row=count, column=0, sticky=W)
+    count += 1
+
+# Items desserts
+variables_desserts = []
+count = 0
+
+for dessert in list_desserts:
+    variables_desserts.append('')
+    variables_desserts[count] = IntVar()
+    dessert = Checkbutton(panel_desserts, text=dessert.title(), font=('Arial', 20, 'bold'),
+                       onvalue=1, offvalue=0, variable=variables_desserts[count])
+
+    dessert.grid(row=count, column=0, sticky=W)
+    count += 1
+
 # Prevents screen from closing
 app.mainloop()
