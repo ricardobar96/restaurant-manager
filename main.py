@@ -26,7 +26,7 @@ panel_left = Frame(app, bd=1, relief=FLAT)
 panel_left.pack(side=LEFT)
 
 # Costs panel
-panel_costs = Frame(panel_left, bd=1, relief=FLAT)
+panel_costs = Frame(panel_left, bd=1, relief=FLAT, bg="chocolate2", padx=130)
 panel_costs.pack(side=BOTTOM)
 
 # Food panel
@@ -166,42 +166,42 @@ tag_cost_food.grid(row=0, column=0)
 
 text_cost_food = Entry(panel_costs, font=('Arial', 12, 'bold'), bd=1, width=10,
                        state='readonly', textvariable=var_cost_food)
-text_cost_food.grid(row=0, column=1)
+text_cost_food.grid(row=0, column=1, padx= 35)
 
 tag_cost_drinks = Label(panel_costs, text='Cost drinks', font=('Arial', 12, 'bold'), bg="chocolate2", fg="white")
 tag_cost_drinks.grid(row=1, column=0)
 
 text_cost_drinks = Entry(panel_costs, font=('Arial', 12, 'bold'), bd=1, width=10,
                        state='readonly', textvariable=var_cost_drinks)
-text_cost_drinks.grid(row=1, column=1)
+text_cost_drinks.grid(row=1, column=1, padx= 35)
 
 tag_cost_desserts = Label(panel_costs, text='Cost desserts', font=('Arial', 12, 'bold'), bg="chocolate2", fg="white")
 tag_cost_desserts.grid(row=2, column=0)
 
 text_cost_desserts = Entry(panel_costs, font=('Arial', 12, 'bold'), bd=1, width=10,
                        state='readonly', textvariable=var_cost_desserts)
-text_cost_desserts.grid(row=2, column=1)
+text_cost_desserts.grid(row=2, column=1, padx= 35)
 
 tag_subtotal = Label(panel_costs, text='Subtotal', font=('Arial', 12, 'bold'), bg="chocolate2", fg="white")
 tag_subtotal.grid(row=0, column=2)
 
 text_subtotal = Entry(panel_costs, font=('Arial', 12, 'bold'), bd=1, width=10,
                        state='readonly', textvariable=var_subtotal)
-text_subtotal.grid(row=0, column=3)
+text_subtotal.grid(row=0, column=3, padx= 35)
 
 tag_tax = Label(panel_costs, text='Tax', font=('Arial', 12, 'bold'), bg="chocolate2", fg="white")
 tag_tax.grid(row=1, column=2)
 
 text_tax = Entry(panel_costs, font=('Arial', 12, 'bold'), bd=1, width=10,
                        state='readonly', textvariable=var_tax)
-text_tax.grid(row=1, column=3)
+text_tax.grid(row=1, column=3, padx= 35)
 
 tag_total = Label(panel_costs, text='Total', font=('Arial', 12, 'bold'), bg="chocolate2", fg="white")
 tag_total.grid(row=2, column=2)
 
 text_total = Entry(panel_costs, font=('Arial', 12, 'bold'), bd=1, width=10,
                        state='readonly', textvariable=var_total)
-text_total.grid(row=2, column=3)
+text_total.grid(row=2, column=3, padx= 35)
 
 # Prevents screen from closing
 app.mainloop()
