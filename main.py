@@ -154,6 +154,11 @@ for dessert in list_desserts:
 
 # Variables
 var_cost_food = StringVar()
+var_cost_drinks = StringVar()
+var_cost_desserts = StringVar()
+var_tax = StringVar()
+var_subtotal = StringVar()
+var_total = StringVar()
 
 # Costs tags and input fields
 tag_cost_food = Label(panel_costs, text='Cost food', font=('Arial', 12, 'bold'), bg="chocolate2", fg="white")
@@ -162,6 +167,20 @@ tag_cost_food.grid(row=0, column=0)
 text_cost_food = Entry(panel_costs, font=('Arial', 12, 'bold'), bd=1, width=10,
                        state='readonly', textvariable=var_cost_food)
 text_cost_food.grid(row=0, column=1)
+
+tag_cost_drinks = Label(panel_costs, text='Cost drinks', font=('Arial', 12, 'bold'), bg="chocolate2", fg="white")
+tag_cost_drinks.grid(row=1, column=0)
+
+text_cost_drinks = Entry(panel_costs, font=('Arial', 12, 'bold'), bd=1, width=10,
+                       state='readonly', textvariable=var_cost_drinks)
+text_cost_drinks.grid(row=1, column=1)
+
+tag_cost_desserts = Label(panel_costs, text='Cost desserts', font=('Arial', 12, 'bold'), bg="chocolate2", fg="white")
+tag_cost_desserts.grid(row=2, column=0)
+
+text_cost_desserts = Entry(panel_costs, font=('Arial', 12, 'bold'), bd=1, width=10,
+                       state='readonly', textvariable=var_cost_desserts)
+text_cost_desserts.grid(row=2, column=1)
 
 # Prevents screen from closing
 app.mainloop()
