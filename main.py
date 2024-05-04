@@ -182,5 +182,19 @@ text_cost_desserts = Entry(panel_costs, font=('Arial', 12, 'bold'), bd=1, width=
                        state='readonly', textvariable=var_cost_desserts)
 text_cost_desserts.grid(row=2, column=1)
 
+tag_subtotal = Label(panel_costs, text='Subtotal', font=('Arial', 12, 'bold'), bg="chocolate2", fg="white")
+tag_subtotal.grid(row=0, column=2)
+
+text_subtotal = Entry(panel_costs, font=('Arial', 12, 'bold'), bd=1, width=10,
+                       state='readonly', textvariable=var_subtotal)
+text_subtotal.grid(row=0, column=3)
+
+tag_tax = Label(panel_costs, text='Tax', font=('Arial', 12, 'bold'), bg="chocolate2", fg="white")
+tag_tax.grid(row=1, column=2)
+
+text_tax = Entry(panel_costs, font=('Arial', 12, 'bold'), bd=1, width=10,
+                       state='readonly', textvariable=var_tax)
+text_tax.grid(row=1, column=3)
+
 # Prevents screen from closing
 app.mainloop()
