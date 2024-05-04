@@ -29,5 +29,11 @@ panel_left.pack(side=LEFT)
 panel_costs = Frame(panel_left, bd=1, relief=FLAT)
 panel_costs.pack(side=BOTTOM)
 
+# Food panel
+panel_food = LabelFrame(panel_left, text='Food', fg='chocolate4',
+                  font=('Arial', 20, 'bold'), relief=FLAT, bd=1)
+
+panel_food.pack(side=LEFT)
+
 # Prevents screen from closing
 app.mainloop()
