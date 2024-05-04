@@ -47,5 +47,21 @@ panel_desserts = LabelFrame(panel_left, text='Desserts', fg='chocolate4',
 
 panel_desserts.pack(side=LEFT)
 
+# Right panel
+panel_right = Frame(app, bd=1, relief=FLAT)
+panel_right.pack(side=RIGHT)
+
+# Calculator panel
+panel_calculator = Frame(panel_right, bd=1, relief=FLAT, bg='seashell3')
+panel_calculator.pack()
+
+# Calculator receipt
+panel_receipt = Frame(panel_right, bd=1, relief=FLAT, bg='seashell3')
+panel_receipt.pack()
+
+# Buttons panel
+panel_buttons = Frame(panel_right, bd=1, relief=FLAT, bg='seashell3')
+panel_buttons.pack()
+
 # Prevents screen from closing
 app.mainloop()
