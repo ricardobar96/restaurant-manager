@@ -3,7 +3,7 @@ from tkinter import *
 # TKinter initialization and settings
 app = Tk()
 
-app.geometry('1020x630+0+0')
+app.geometry('1290x630+0+0')
 
 app.resizable(0, 0)
 
