@@ -220,7 +220,26 @@ text_receipt.grid(row=0, column=0)
 
 # Calculator
 screen_calculator = Entry(panel_calculator, font=('Arial', 16, 'bold'), bd=1, width=42)
-screen_calculator.grid(row=0, column=0)
+screen_calculator.grid(row=0, column=0, columnspan=6)
+
+buttons_calculator = ['7', '8', '9', '+', '4', '5', '6', '-',
+                      '1', '2', '3', 'x', 'R', 'DEL', '0', '/']
+
+row = 1
+column = 0
+
+for button in buttons_calculator:
+    button = Button(panel_calculator, text=button.title(), font=('Arial', 16, 'bold'),
+                    fg="white", bg="blue", bd=1, width=9)
+    button.grid(row=row, column=column)
+
+    if column == 3:
+        row += 1
+
+    column += 1
+
+    if column == 4:
+        column = 0
 
 # Prevents screen from closing
 app.mainloop()
