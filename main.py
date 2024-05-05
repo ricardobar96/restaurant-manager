@@ -203,5 +203,16 @@ text_total = Entry(panel_costs, font=('Arial', 12, 'bold'), bd=1, width=10,
                        state='readonly', textvariable=var_total)
 text_total.grid(row=2, column=3, padx= 35)
 
+# Buttons
+buttons = ['total', 'receipt', 'save', 'reset']
+columns = 0
+
+for button in buttons:
+    button = Button(panel_buttons, text=button.title(), font=('Arial', 16, 'bold'),
+                   fg="white", bg="blue", bd=1, width=9)
+
+    button.grid(row=0, column=columns)
+    columns += 1
+
 # Prevents screen from closing
 app.mainloop()
