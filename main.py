@@ -3,7 +3,7 @@ from tkinter import *
 # TKinter initialization and settings
 app = Tk()
 
-app.geometry('1290x630+0+0')
+app.geometry('1280x630+0+0')
 
 app.resizable(0, 0)
 
@@ -213,6 +213,14 @@ for button in buttons:
 
     button.grid(row=0, column=columns)
     columns += 1
+
+# Receipt
+text_receipt = Text(panel_receipt, font=('Arial', 14, 'bold'), bd=1, width=45, height=10)
+text_receipt.grid(row=0, column=0)
+
+# Calculator
+screen_calculator = Entry(panel_calculator, font=('Arial', 16, 'bold'), bd=1, width=42)
+screen_calculator.grid(row=0, column=0)
 
 # Prevents screen from closing
 app.mainloop()
