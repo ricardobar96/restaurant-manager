@@ -22,11 +22,37 @@ def get_result():
 
 def check():
     f = 0
-    for c in inputs_food:
+    for i in inputs_food:
         if variables_food[f].get() == 1:
             inputs_food[f].config(state=NORMAL)
             inputs_food[f].delete(0, END)
+            inputs_food[f].focus()
+        else:
+            inputs_food[f].config(state=DISABLED)
+            text_food[f].set('0')
         f += 1
+
+    d = 0
+    for i in inputs_drinks:
+        if variables_drinks[d].get() == 1:
+            inputs_drinks[d].config(state=NORMAL)
+            inputs_drinks[d].delete(0, END)
+            inputs_drinks[d].focus()
+        else:
+            inputs_drinks[d].config(state=DISABLED)
+            text_drinks[d].set('0')
+        d += 1
+
+    ds = 0
+    for i in inputs_desserts:
+        if variables_desserts[ds].get() == 1:
+            inputs_desserts[ds].config(state=NORMAL)
+            inputs_desserts[ds].delete(0, END)
+            inputs_desserts[ds].focus()
+        else:
+            inputs_desserts[ds].config(state=DISABLED)
+            text_desserts[ds].set('0')
+        ds += 1
 
 # TKinter initialization and settings
 app = Tk()
