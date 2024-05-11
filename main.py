@@ -20,6 +20,14 @@ def get_result():
     screen_calculator.insert(0, result)
     action = ''
 
+def check():
+    f = 0
+    for c in inputs_food:
+        if variables_food[f].get() == 1:
+            inputs_food[f].config(state=NORMAL)
+            inputs_food[f].delete(0, END)
+        f += 1
+
 # TKinter initialization and settings
 app = Tk()
 
@@ -100,7 +108,7 @@ for food in list_food:
     variables_food.append('')
     variables_food[count] = IntVar()
     food = Checkbutton(panel_food, text=food.title(), font=('Arial', 20, 'bold'),
-                       onvalue=1, offvalue=0, variable=variables_food[count])
+                       onvalue=1, offvalue=0, variable=variables_food[count], command=check)
 
     food.grid(row=count, column=0, sticky=W)
 
@@ -128,7 +136,7 @@ for drink in list_drinks:
     variables_drinks.append('')
     variables_drinks[count] = IntVar()
     drink = Checkbutton(panel_drinks, text=drink.title(), font=('Arial', 20, 'bold'),
-                       onvalue=1, offvalue=0, variable=variables_drinks[count])
+                       onvalue=1, offvalue=0, variable=variables_drinks[count], command=check)
 
     drink.grid(row=count, column=0, sticky=W)
 
@@ -156,7 +164,7 @@ for dessert in list_desserts:
     variables_desserts.append('')
     variables_desserts[count] = IntVar()
     dessert = Checkbutton(panel_desserts, text=dessert.title(), font=('Arial', 20, 'bold'),
-                       onvalue=1, offvalue=0, variable=variables_desserts[count])
+                       onvalue=1, offvalue=0, variable=variables_desserts[count], command=check)
 
     dessert.grid(row=count, column=0, sticky=W)
 
