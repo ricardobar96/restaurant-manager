@@ -8,6 +8,11 @@ def click_button(number):
     screen_calculator.delete(0, END)
     screen_calculator.insert(END, action)
 
+def delete():
+    global action
+    action = ''
+    screen_calculator.delete(0, END)
+
 # TKinter initialization and settings
 app = Tk()
 
@@ -264,6 +269,7 @@ saved_buttons[8].config(command=lambda : click_button('1'))
 saved_buttons[9].config(command=lambda : click_button('2'))
 saved_buttons[10].config(command=lambda : click_button('3'))
 saved_buttons[11].config(command=lambda : click_button('*'))
+saved_buttons[13].config(command=delete)
 saved_buttons[14].config(command=lambda : click_button('0'))
 saved_buttons[15].config(command=lambda : click_button('/'))
 
