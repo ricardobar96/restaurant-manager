@@ -13,6 +13,13 @@ def delete():
     action = ''
     screen_calculator.delete(0, END)
 
+def get_result():
+    global action
+    result = str(eval(action))
+    screen_calculator.delete(0, END)
+    screen_calculator.insert(0, result)
+    action = ''
+
 # TKinter initialization and settings
 app = Tk()
 
@@ -236,7 +243,7 @@ screen_calculator = Entry(panel_calculator, font=('Arial', 16, 'bold'), bd=1, wi
 screen_calculator.grid(row=0, column=0, columnspan=6)
 
 buttons_calculator = ['7', '8', '9', '+', '4', '5', '6', '-',
-                      '1', '2', '3', 'x', 'R', 'DEL', '0', '/']
+                      '1', '2', '3', 'x', '=', 'DEL', '0', '/']
 
 saved_buttons = []
 
@@ -269,6 +276,7 @@ saved_buttons[8].config(command=lambda : click_button('1'))
 saved_buttons[9].config(command=lambda : click_button('2'))
 saved_buttons[10].config(command=lambda : click_button('3'))
 saved_buttons[11].config(command=lambda : click_button('*'))
+saved_buttons[12].config(command=get_result)
 saved_buttons[13].config(command=delete)
 saved_buttons[14].config(command=lambda : click_button('0'))
 saved_buttons[15].config(command=lambda : click_button('/'))
