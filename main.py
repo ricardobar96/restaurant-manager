@@ -1,5 +1,13 @@
 from tkinter import *
 
+action = ''
+
+def click_button(number):
+    global action
+    action = action + number
+    screen_calculator.delete(0, END)
+    screen_calculator.insert(END, action)
+
 # TKinter initialization and settings
 app = Tk()
 
@@ -225,12 +233,15 @@ screen_calculator.grid(row=0, column=0, columnspan=6)
 buttons_calculator = ['7', '8', '9', '+', '4', '5', '6', '-',
                       '1', '2', '3', 'x', 'R', 'DEL', '0', '/']
 
+saved_buttons = []
+
 row = 1
 column = 0
 
 for button in buttons_calculator:
     button = Button(panel_calculator, text=button.title(), font=('Arial', 16, 'bold'),
                     fg="white", bg="blue", bd=1, width=9)
+    saved_buttons.append(button)
     button.grid(row=row, column=column)
 
     if column == 3:
@@ -240,6 +251,21 @@ for button in buttons_calculator:
 
     if column == 4:
         column = 0
+
+saved_buttons[0].config(command=lambda : click_button('7'))
+saved_buttons[1].config(command=lambda : click_button('8'))
+saved_buttons[2].config(command=lambda : click_button('9'))
+saved_buttons[3].config(command=lambda : click_button('+'))
+saved_buttons[4].config(command=lambda : click_button('4'))
+saved_buttons[5].config(command=lambda : click_button('5'))
+saved_buttons[6].config(command=lambda : click_button('6'))
+saved_buttons[7].config(command=lambda : click_button('-'))
+saved_buttons[8].config(command=lambda : click_button('1'))
+saved_buttons[9].config(command=lambda : click_button('2'))
+saved_buttons[10].config(command=lambda : click_button('3'))
+saved_buttons[11].config(command=lambda : click_button('*'))
+saved_buttons[14].config(command=lambda : click_button('0'))
+saved_buttons[15].config(command=lambda : click_button('/'))
 
 # Prevents screen from closing
 app.mainloop()
