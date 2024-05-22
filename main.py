@@ -25,7 +25,8 @@ def check():
     for i in inputs_food:
         if variables_food[f].get() == 1:
             inputs_food[f].config(state=NORMAL)
-            inputs_food[f].delete(0, END)
+            if inputs_food[f].get() == '0':
+                inputs_food[f].delete(0, END)
             inputs_food[f].focus()
         else:
             inputs_food[f].config(state=DISABLED)
@@ -36,7 +37,8 @@ def check():
     for i in inputs_drinks:
         if variables_drinks[d].get() == 1:
             inputs_drinks[d].config(state=NORMAL)
-            inputs_drinks[d].delete(0, END)
+            if inputs_drinks[d].get() == '0':
+                inputs_drinks[d].delete(0, END)
             inputs_drinks[d].focus()
         else:
             inputs_drinks[d].config(state=DISABLED)
@@ -47,7 +49,8 @@ def check():
     for i in inputs_desserts:
         if variables_desserts[ds].get() == 1:
             inputs_desserts[ds].config(state=NORMAL)
-            inputs_desserts[ds].delete(0, END)
+            if inputs_desserts[ds].get() == '0':
+                inputs_desserts[ds].delete(0, END)
             inputs_desserts[ds].focus()
         else:
             inputs_desserts[ds].config(state=DISABLED)
