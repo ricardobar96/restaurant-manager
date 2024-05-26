@@ -142,6 +142,37 @@ def save():
     archive.close()
     messagebox.showinfo('Info', 'Your receipt has been saved')
 
+def reset():
+    text_receipt.delete(0.1, END)
+
+    for text in text_food:
+        text.set('0')
+    for text in text_drinks:
+        text.set('0')
+    for text in text_desserts:
+        text.set('0')
+
+    for input in inputs_food:
+        input.config(state=DISABLED)
+    for input in inputs_drinks:
+        input.config(state=DISABLED)
+    for input in inputs_desserts:
+        input.config(state=DISABLED)
+
+    for v in variables_food:
+        v.set(0)
+    for v in variables_drinks:
+        v.set(0)
+    for v in variables_desserts:
+        v.set(0)
+
+    var_cost_food.set('')
+    var_cost_drinks.set('')
+    var_cost_desserts.set('')
+    var_subtotal.set('')
+    var_tax.set('')
+    var_total.set('')
+
 # TKinter initialization and settings
 app = Tk()
 
@@ -362,6 +393,7 @@ for button in buttons:
 buttons_created[0].config(command=total)
 buttons_created[1].config(command=receipt)
 buttons_created[2].config(command=save)
+buttons_created[3].config(command=reset)
 
 # Receipt
 text_receipt = Text(panel_receipt, font=('Arial', 14, 'bold'), bd=1, width=45, height=10)
