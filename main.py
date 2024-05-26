@@ -1,4 +1,6 @@
 from tkinter import *
+import random
+import datetime
 
 action = ''
 prices_food = [1.32, 1.65, 2.31, 3.22, 1.22, 1.99, 2.05, 2.65]
@@ -89,6 +91,13 @@ def total():
     var_subtotal.set(f'€ {round(sub_total, 2)}')
     var_tax.set(f'€ {round(taxes, 2)}')
     var_total.set(f'€ {round(total, 2)}')
+
+def receipt():
+    text_receipt.delete(1.0, END)
+    num_receipt = f'N# - {random.randint(1000, 9999)}'
+    date = datetime.datetime.now()
+    date_receipt = f'{date.day}/{date.month}/{date.year} - {date.hour}:{date.minute}'
+    text_receipt.insert(END, f'Data:\t{num_receipt}\t\t{date_receipt}')
 
 # TKinter initialization and settings
 app = Tk()
@@ -308,6 +317,7 @@ for button in buttons:
     columns += 1
 
 buttons_created[0].config(command=total)
+buttons_created[1].config(command=receipt)
 
 # Receipt
 text_receipt = Text(panel_receipt, font=('Arial', 14, 'bold'), bd=1, width=45, height=10)
