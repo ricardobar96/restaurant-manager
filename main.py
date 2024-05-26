@@ -102,6 +102,27 @@ def receipt():
     text_receipt.insert(END, 'Items\t\tQuant.\tCost Items\n')
     text_receipt.insert(END, f'-' * 82 + '\n')
 
+    x = 0
+    for food in text_food:
+        if food.get() != '0':
+            text_receipt.insert(END, f'{list_food[x]}\t\t{food.get()}\t'
+                                     f'€ {int(food.get()) * prices_food[x]}\n')
+        x += 1
+
+    x = 0
+    for drink in text_drinks:
+        if drink.get() != '0':
+            text_receipt.insert(END, f'{list_drinks[x]}\t\t{drink.get()}\t'
+                                     f'€ {int(drink.get()) * prices_drinks[x]}\n')
+        x += 1
+
+    x = 0
+    for dessert in text_desserts:
+        if dessert.get() != '0':
+            text_receipt.insert(END, f'{list_desserts[x]}\t\t{dessert.get()}\t'
+                                     f'€ {int(dessert.get()) * prices_desserts[x]}\n')
+        x += 1
+
 # TKinter initialization and settings
 app = Tk()
 
