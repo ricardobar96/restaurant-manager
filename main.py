@@ -1,6 +1,7 @@
 from tkinter import *
 import random
 import datetime
+from tkinter import filedialog, messagebox
 
 action = ''
 prices_food = [1.32, 1.65, 2.31, 3.22, 1.22, 1.99, 2.05, 2.65]
@@ -129,10 +130,17 @@ def receipt():
     text_receipt.insert(END, f'Desserts Cost: \t\t\t{var_cost_desserts.get()}\n')
     text_receipt.insert(END, f'-' * 82 + '\n')
     text_receipt.insert(END, f'Subtotal: \t\t\t{var_subtotal.get()}\n')
-    text_receipt.insert(END, f'Taxes: \t\t\t{var_tax.get()}\n')
-    text_receipt.insert(END, f'Total: \t\t\t{var_total.get()}\n')
+    text_receipt.insert(END, f'Taxes:    \t\t\t{var_tax.get()}\n')
+    text_receipt.insert(END, f'Total:    \t\t\t{var_total.get()}\n')
     text_receipt.insert(END, f'*' * 70 + '\n')
     text_receipt.insert(END, "Come again to Ricardo's Restaurant!")
+
+def save():
+    info_receipt = text_receipt.get(1.0, END)
+    archive = filedialog.asksaveasfile(mode='w', defaultextension='.txt')
+    archive.write(info_receipt)
+    archive.close()
+    messagebox.showinfo('Info', 'Your receipt has been saved')
 
 # TKinter initialization and settings
 app = Tk()
@@ -353,6 +361,7 @@ for button in buttons:
 
 buttons_created[0].config(command=total)
 buttons_created[1].config(command=receipt)
+buttons_created[2].config(command=save)
 
 # Receipt
 text_receipt = Text(panel_receipt, font=('Arial', 14, 'bold'), bd=1, width=45, height=10)
