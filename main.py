@@ -79,6 +79,17 @@ def total():
         sub_total_desserts = sub_total_desserts + (float(quantity.get()) * prices_desserts[p])
         p += 1
 
+    sub_total = sub_total_food + sub_total_drinks + sub_total_desserts
+    taxes = sub_total * 0.07
+    total = sub_total + taxes
+
+    var_cost_food.set(f'€ {round(sub_total_food, 2)}')
+    var_cost_drinks.set(f'€ {round(sub_total_drinks, 2)}')
+    var_cost_desserts.set(f'€ {round(sub_total_desserts, 2)}')
+    var_subtotal.set(f'€ {round(sub_total, 2)}')
+    var_tax.set(f'€ {round(taxes, 2)}')
+    var_total.set(f'€ {round(total, 2)}')
+
 # TKinter initialization and settings
 app = Tk()
 
