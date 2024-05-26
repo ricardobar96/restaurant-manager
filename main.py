@@ -97,7 +97,10 @@ def receipt():
     num_receipt = f'N# - {random.randint(1000, 9999)}'
     date = datetime.datetime.now()
     date_receipt = f'{date.day}/{date.month}/{date.year} - {date.hour}:{date.minute}'
-    text_receipt.insert(END, f'Data:\t{num_receipt}\t\t{date_receipt}')
+    text_receipt.insert(END, f'Data:\t{num_receipt}\t\t{date_receipt}\n')
+    text_receipt.insert(END, f'*' * 70 + '\n')
+    text_receipt.insert(END, 'Items\t\tQuant.\tCost Items\n')
+    text_receipt.insert(END, f'-' * 82 + '\n')
 
 # TKinter initialization and settings
 app = Tk()
