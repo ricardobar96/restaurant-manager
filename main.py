@@ -123,6 +123,17 @@ def receipt():
                                      f'€ {int(dessert.get()) * prices_desserts[x]}\n')
         x += 1
 
+    text_receipt.insert(END, f'-' * 82 + '\n')
+    text_receipt.insert(END, f'Food Cost: \t\t\t{var_cost_food.get()}\n')
+    text_receipt.insert(END, f'Drinks Cost: \t\t\t{var_cost_drinks.get()}\n')
+    text_receipt.insert(END, f'Desserts Cost: \t\t\t{var_cost_desserts.get()}\n')
+    text_receipt.insert(END, f'-' * 82 + '\n')
+    text_receipt.insert(END, f'Subtotal: \t\t\t{var_subtotal.get()}\n')
+    text_receipt.insert(END, f'Taxes: \t\t\t{var_tax.get()}\n')
+    text_receipt.insert(END, f'Total: \t\t\t{var_total.get()}\n')
+    text_receipt.insert(END, f'*' * 70 + '\n')
+    text_receipt.insert(END, "Come again to Ricardo's Restaurant!")
+
 # TKinter initialization and settings
 app = Tk()
 
