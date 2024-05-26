@@ -1,6 +1,9 @@
 from tkinter import *
 
 action = ''
+prices_food = [1.32, 1.65, 2.31, 3.22, 1.22, 1.99, 2.05, 2.65]
+prices_drinks = [0.25, 0.99, 1.21, 1.54, 1.08, 1.10, 2.00, 1.58]
+prices_desserts = [1.54, 1.68, 1.32, 1.97, 2.55, 2.14, 1.94, 1.74]
 
 def click_button(number):
     global action
@@ -56,6 +59,25 @@ def check():
             inputs_desserts[ds].config(state=DISABLED)
             text_desserts[ds].set('0')
         ds += 1
+
+def total():
+    sub_total_food = 0
+    p = 0
+    for quantity in text_food:
+        sub_total_food = sub_total_food + (float(quantity.get()) * prices_food[p])
+        p += 1
+
+    sub_total_drinks = 0
+    p = 0
+    for quantity in text_drinks:
+        sub_total_drinks = sub_total_drinks + (float(quantity.get()) * prices_drinks[p])
+        p += 1
+
+    sub_total_desserts = 0
+    p = 0
+    for quantity in text_desserts:
+        sub_total_desserts = sub_total_desserts + (float(quantity.get()) * prices_desserts[p])
+        p += 1
 
 # TKinter initialization and settings
 app = Tk()
@@ -262,14 +284,19 @@ text_total.grid(row=2, column=3, padx= 35)
 
 # Buttons
 buttons = ['total', 'receipt', 'save', 'reset']
+buttons_created = []
 columns = 0
 
 for button in buttons:
     button = Button(panel_buttons, text=button.title(), font=('Arial', 16, 'bold'),
                    fg="white", bg="blue", bd=1, width=9)
 
+    buttons_created.append(button)
+
     button.grid(row=0, column=columns)
     columns += 1
+
+buttons_created[0].config(command=total)
 
 # Receipt
 text_receipt = Text(panel_receipt, font=('Arial', 14, 'bold'), bd=1, width=45, height=10)
