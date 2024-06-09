@@ -3,8 +3,8 @@ Restaurant manager made with <b>Python</b>. It offers its user a way to keep tra
 <br>
 <br>
 
-| [📖 Features](#features) | [:camera: Screenshots](#screenshots) |
-|  -------- | ----------- |
+| [📖 Features](#features) | [:camera: Screenshots](#screenshots) | [🤝 Contributing](#contributing) | [🔖 License](#license) |
+|  -------- | ----------- | ----------- | ----------- |
 
 <br>
 
